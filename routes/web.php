@@ -13,7 +13,7 @@ use App\Http\Controllers\DepreciationsController;
 use App\Http\Controllers\GroupsController;
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\LabelsController;
-use App\Http\Controllers\UploadedFilesController;
+use App\Http\Controllers\LocationsController;
 use App\Http\Controllers\ManufacturersController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\NotesController;
@@ -52,12 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         [LabelsController::class, 'show']
     )->where('labelName', '.*')->name('labels.show');
 
-    Route::get('/test-email', function () {
-        $mailable = new \App\Mail\CheckoutComponentMail(
 
-        );
-        return $mailable->render(); // dumps HTML
-    });
     /*
     * Manufacturers
     */
@@ -474,18 +469,18 @@ Route::group(['prefix' => 'reports', 'middleware' => ['auth']], function () {
             ->push(trans('general.depreciation_report'), route('reports.audit')));
 
     Route::get(
-        'maintenances', [ReportsController::class, 'getMaintenancesReport'])
-        ->name('ui.reports.maintenances')
+        'asset_maintenances', [ReportsController::class, 'getAssetMaintenancesReport'])
+        ->name('reports/asset_maintenances')
         ->breadcrumbs(fn (Trail $trail) =>
         $trail->parent('home')
-            ->push(trans('general.asset_maintenance_report'), route('ui.reports.maintenances')));
+            ->push(trans('general.asset_maintenance_report'), route('reports/asset_maintenances')));
 
     // Is this still used?
-    Route::get('export/maintenances', [ReportsController::class, 'exportMaintenancesReport'])
-        ->name('reports/export/maintenances')
+    Route::get('export/asset_maintenances', [ReportsController::class, 'exportAssetMaintenancesReport'])
+        ->name('reports/export/asset_maintenances')
         ->breadcrumbs(fn (Trail $trail) =>
         $trail->parent('home')
-            ->push(trans('general.asset_maintenance_report'), route('reports/export/maintenances')));
+            ->push(trans('general.asset_maintenance_report'), route('reports/export/asset_maintenances')));
 
     Route::get('licenses', [ReportsController::class, 'getLicenseReport'])
         ->name('reports/licenses')
@@ -693,39 +688,6 @@ Route::group(['middleware' => 'web'], function () {
         'logout',
         [LoginController::class, 'logout']
     )->name('logout.post');
-
-
-
-    /**
-     * Uploaded files API routes
-     */
-
-    // Get a file
-    Route::get('{object_type}/{id}/files/{file_id}',
-        [
-            UploadedFilesController::class,
-            'show'
-        ]
-    )->name('ui.files.show')
-        ->where(['object_type' => 'assets|maintenances|hardware|models|users|locations|accessories|consumables|licenses|components']);
-
-    // Upload files(s)
-    Route::post('{object_type}/{id}/files',
-        [
-            UploadedFilesController::class,
-            'store'
-        ]
-    )->name('ui.files.store')
-        ->where(['object_type' => 'assets|maintenances|hardware|models|users|locations|accessories|consumables|licenses|components']);
-
-    // Delete files(s)
-    Route::delete('{object_type}/{id}/files/{file_id}/delete',
-        [
-            UploadedFilesController::class,
-            'destroy'
-        ]
-    )->name('ui.files.destroy')
-        ->where(['object_type' => 'assets|hardware|models|users|locations|accessories|consumables|licenses|components']);
 });
 
 

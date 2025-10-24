@@ -53,7 +53,6 @@ class LicensePresenter extends Presenter
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/licenses/form.to_email'),
-                'formatter' => 'emailFormatter',
             ], [
                 'field' => 'license_name',
                 'searchable' => true,

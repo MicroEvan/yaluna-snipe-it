@@ -93,42 +93,6 @@ class CustomFieldFactory extends Factory
         });
     }
 
-    public function encrypt()
-    {
-        return $this->state(function () {
-            return [
-                'field_encrypted' => '1',
-            ];
-        });
-    }
-
-    public function alpha()
-    {
-        return $this->state(function () {
-            return [
-                'format' => 'alpha',
-            ];
-        });
-    }
-
-    public function numeric()
-    {
-        return $this->state(function () {
-            return [
-                'format' => 'numeric',
-            ];
-        });
-    }
-
-    public function email()
-    {
-        return $this->state(function () {
-            return [
-                'format' => 'email',
-            ];
-        });
-    }
-
     public function testCheckbox()
     {
         return $this->state(function () {

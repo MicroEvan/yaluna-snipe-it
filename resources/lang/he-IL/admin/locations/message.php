@@ -22,7 +22,7 @@ return array(
     ),
 
     'restore' => array(
-        'error'   => 'מיקום לא שוחזר, אנא נסה שוב',
+        'error'   => 'Location was not restored, please try again',
         'success' => 'המקום שוחזר בהצלחה.'
     ),
 

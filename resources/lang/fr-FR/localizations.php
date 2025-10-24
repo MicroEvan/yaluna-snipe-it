@@ -68,7 +68,7 @@ return [
         'zu-ZA'=> 'Zoulou',
     ],
 
-    'select_country' => 'Sélectionnez un pays',
+    'select_country' => 'Select a Country',
     
     'countries' => [
         'AC'=>'Île de l\'Ascension',

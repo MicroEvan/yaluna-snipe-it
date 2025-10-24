@@ -9,7 +9,7 @@ return [
     'bulk_checkin'              => 'Toplu Teslim Al',
     'checkin'  					=> 'Demirbaş Girişi Yap',
     'checkout'  				=> 'Ödenme Öğe',
-    'clear'                     => 'Temizle',
+    'clear'                     => 'Clear',
     'clone'  					=> 'Demirbaşı Kopyala',
     'deployable'  				=> 'Dağıtılabilir',
     'deleted'  					=> 'Bu varlık silindi.',

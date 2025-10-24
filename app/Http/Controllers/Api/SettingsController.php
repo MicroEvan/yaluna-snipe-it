@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Helpers\Helper;
+use App\Helpers\StorageHelper;
 use App\Http\Transformers\DatatablesTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -50,22 +51,10 @@ class SettingsController extends Controller
                 })->slice(0, 10)->map(function ($item) use ($settings) {
                     return (object) [
                         'username'        => $item[$settings['ldap_username_field']][0] ?? null,
-                        'display_name'    => $item[$settings['ldap_display_name']][0] ?? null,
                         'employee_number' => $item[$settings['ldap_emp_num']][0] ?? null,
                         'lastname'        => $item[$settings['ldap_lname_field']][0] ?? null,
                         'firstname'       => $item[$settings['ldap_fname_field']][0] ?? null,
                         'email'           => $item[$settings['ldap_email']][0] ?? null,
-                        'phone'           => $item[$settings['ldap_phone_field']][0] ?? null,
-                        'mobile'          => $item[$settings['ldap_mobile']][0] ?? null,
-                        'jobtitle'        => $item[$settings['ldap_jobtitle']][0] ?? null,
-                        'department'      => $item[$settings['ldap_department']][0] ?? null,
-                        'manager'         => $item[$settings['ldap_manager']][0] ?? null,
-                        'address'         => $item[$settings['ldap_address']][0] ?? null,
-                        'city'            => $item[$settings['ldap_city']][0] ?? null,
-                        'state'           => $item[$settings['ldap_state']][0] ?? null,
-                        'zip'             => $item[$settings['ldap_zip']][0] ?? null,
-                        'country'         => $item[$settings['ldap_country']][0] ?? null,
-                        'location'        => $item[$settings['ldap_location']][0] ?? null,
                     ];
                 });
                 if ($users->count() > 0) {
@@ -89,7 +78,7 @@ class SettingsController extends Controller
             }
         } catch (\Exception $e) {
             Log::debug('Connection failed but we cannot debug it any further on our end.');
-            return response()->json(['message' => $e->getMessage()], 400);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
 
 
@@ -161,11 +150,8 @@ class SettingsController extends Controller
         if (!config('app.lock_passwords')) {
             try {
                 Notification::send(Setting::first(), new MailTest());
-                Log::debug('Attempting to sending to '.config('mail.reply_to.address'));
                 return response()->json(['message' => 'Mail sent to '.config('mail.reply_to.address')], 200);
             } catch (\Exception $e) {
-                Log::error('Mail sent error using '.config('mail.reply_to.address') .': '. $e->getMessage());
-                Log::debug($e);
                 return response()->json(['message' => $e->getMessage()], 500);
             }
         }

@@ -34,21 +34,21 @@
                         <a href="#assets" data-toggle="tab">
                             {{ trans('general.assets') }}
 
-                            {!! ($depreciation->assets()->AssetsForShow()->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($depreciation->assets()->AssetsForShow()->count()).'</span>' : '' !!}
+                            {!! ($depreciation->assets()->AssetsForShow()->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($depreciation->assets()->AssetsForShow()->count()).'</badge>' : '' !!}
                         </a>
                     </li>
                     <li>
                         <a href="#licenses" data-toggle="tab">
                             {{ trans('general.licenses') }}
 
-                            {!! ($depreciation->licenses_count > 0 ) ? '<span class="badge badge-secondary">'.number_format($depreciation->licenses_count).'</span>' : '' !!}
+                            {!! ($depreciation->licenses_count > 0 ) ? '<badge class="badge badge-secondary">'.number_format($depreciation->licenses_count).'</badge>' : '' !!}
                         </a>
                     </li>
                     <li>
                         <a href="#models" data-toggle="tab">
                             {{ trans('general.asset_models') }}
 
-                            {!! ($depreciation->models_count > 0 ) ? '<span class="badge badge-secondary">'.number_format($depreciation->models_count).'</span>' : '' !!}
+                            {!! ($depreciation->models_count > 0 ) ? '<badge class="badge badge-secondary">'.number_format($depreciation->models_count).'</badge>' : '' !!}
                         </a>
                     </li>
                 </ul>

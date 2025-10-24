@@ -3,7 +3,6 @@
 namespace App\Presenters;
 
 use App\Models\SnipeModel;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
 abstract class Presenter
 {
@@ -70,30 +69,10 @@ abstract class Presenter
         return '';
     }
 
-//    public function name()
-//    {
-//        return $this->model->name;
-//    }
-//
-//    public function display_name()
-//    {
-//        return $this->model->display_name;
-//    }
-
-
-//    protected function displayName(): Attribute
-//    {
-//        // This override should only kick in if the model has a display_name prope
-//        if ($this->getRawOriginal('display_name')) {
-//            return Attribute:: make (
-//                get: fn(mixed $value) => 'Poop:'.$this->display_name
-//            );
-//        }
-//
-//        return Attribute:: make(
-//            get: fn(mixed $value) => 'Fart: '.$this->name,
-//        );
-//    }
+    public function name()
+    {
+        return $this->model->name;
+    }
 
     public function __get($property)
     {
@@ -101,7 +80,7 @@ abstract class Presenter
             return $this->{$property}();
         }
 
-        return $this->model->{$property};
+        return e($this->model->{$property});
     }
 
     public function __call($method, $args)

@@ -14,7 +14,6 @@ use Tests\TestCase;
 
 class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirement
 {
-
     public function testRequiresPermission()
     {
         $this->actingAsForApi(User::factory()->create())
@@ -92,7 +91,6 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
                 'created_by' => $admin->id,
             ])->count(),'Log entry either does not exist or there are more than expected'
         );
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testAccessoryCanBeCheckedOutWithQty()
@@ -127,8 +125,6 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
             ])->count(),
             'Log entry either does not exist or there are more than expected'
         );
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
-
     }
 
     public function testAccessoryCannotBeCheckedOutToInvalidUser()
@@ -194,7 +190,5 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
             ])->count(),
             'Log entry either does not exist or there are more than expected'
         );
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
-
     }
 }

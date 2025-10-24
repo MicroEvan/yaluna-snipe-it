@@ -5,7 +5,6 @@
     'formAction' => ($item->id) ? route('licenses.update', ['license' => $item->id]) : route('licenses.store'),
      'index_route' => 'licenses.index',
     'options' => [
-                'back' => trans('admin/hardware/form.redirect_to_type',['type' => trans('general.previous_page')]),
                 'index' => trans('admin/hardware/form.redirect_to_all', ['type' => 'licenses']),
                 'item' => trans('admin/hardware/form.redirect_to_type', ['type' => trans('general.license')]),
                ]

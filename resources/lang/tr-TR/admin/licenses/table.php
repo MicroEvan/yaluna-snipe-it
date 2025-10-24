@@ -4,7 +4,7 @@ return array(
 
     'assigned_to'   	=> 'Atanan',
     'checkout'   		=> 'Giriş/Çıkış',
-    'deleted_at'        => 'Silindi',
+    'deleted_at'        => 'Deleted at',
     'id'      			=> 'ID',
     'license_email'   	=> 'Lisans E-Posta',
     'license_name'   	=> 'Lisans Kişisi',

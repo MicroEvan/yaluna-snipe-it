@@ -6,6 +6,12 @@
 @parent
 @stop
 
+@section('header_right')
+  @can('create', \App\Models\Consumable::class)
+  <a href="{{ route('consumables.create') }}" {{$snipeSettings->shortcuts_enabled == 1 ? "accesskey=n" : ''}} class="btn btn-primary pull-right"> {{ trans('general.create') }}</a>
+  @endcan
+@stop
+
 {{-- Page content --}}
 @section('content')
 
@@ -25,7 +31,6 @@
                 data-sort-name="name"
                 data-toolbar="#toolbar"
                 id="consumablesTable"
-                data-buttons="consumableButtons"
                 class="table table-striped snipe-table"
                 data-url="{{ route('api.consumables.index') }}"
                 data-export-options='{

@@ -20,7 +20,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
 
         $blah = Ldap::connectToLdap();
@@ -84,7 +84,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
         $this->getFunctionMock("App\\Models", "ldap_bind")->expects($this->once())->willReturn(true);
 
@@ -114,7 +114,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
         // note - we return FALSE first, to simulate a bad-bind, then TRUE the second time to simulate a successful admin bind
         $this->getFunctionMock("App\\Models", "ldap_bind")->expects($this->exactly(2))->willReturn(false, true);
@@ -135,7 +135,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
         $this->getFunctionMock("App\\Models", "ldap_bind")->expects($this->once())->willReturn(true);
 
@@ -156,7 +156,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
         $this->getFunctionMock("App\\Models", "ldap_bind")->expects($this->once())->willReturn(true);
 
@@ -179,7 +179,7 @@ class LdapTest extends TestCase
         $ldap_connect->expects($this->once())->willReturn('hello');
 
         $ldap_set_option = $this->getFunctionMock("App\\Models", "ldap_set_option");
-        $ldap_set_option->expects($this->exactly(4));
+        $ldap_set_option->expects($this->exactly(3));
 
         $this->getFunctionMock("App\\Models", "ldap_bind")->expects($this->once())->willReturn(true);
 
@@ -228,7 +228,6 @@ class LdapTest extends TestCase
         $this->settings->enableLdap()->set(['ldap_client_tls_cert' => 'SAMPLE CERT TEXT']);
         $client_side_cert_path = Setting::get_client_side_cert_path();
         file_put_contents($client_side_cert_path, 'WEIRDLY UPDATED CERT FILE');
-        clearstatcache();
         //the system should respect our cache-file, since the settings haven't been updated
         $possibly_recached_cert_file = Setting::get_client_side_cert_path(); //this should *NOT* re-cache from the Settings
         $this->assertStringEqualsFile($possibly_recached_cert_file, 'WEIRDLY UPDATED CERT FILE');

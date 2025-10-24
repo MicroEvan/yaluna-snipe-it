@@ -115,7 +115,6 @@ class AssetPresenter extends Presenter
                 'sortable' => true,
                 'title' => trans('admin/users/table.title'),
                 'visible' => false,
-                'formatter' => 'jobtitleFormatter',
             ], [
                 'field' => 'location',
                 'searchable' => true,
@@ -328,7 +327,7 @@ class AssetPresenter extends Presenter
         // name can break the listings page. - snipe
         foreach ($fields as $field) {
             $layout[] = [
-                'field' => $field->db_column,
+                'field' => 'custom_fields.'.$field->db_column,
                 'searchable' => true,
                 'sortable' => true,
                 'switchable' => true,

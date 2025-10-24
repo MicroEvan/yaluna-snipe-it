@@ -232,7 +232,6 @@
                     data-cookie-id-table="dashActivityReport"
                     data-height="500"
                     data-pagination="false"
-                    data-side-pagination="server"
                     data-id-table="dashActivityReport"
                     data-sort-order="desc"
                     data-sort-name="created_at"
@@ -502,7 +501,7 @@
 @push('js')
 
 
-        <script src="{{ url(mix('js/dist/Chart.min.js')) }}"></script>
+
 <script nonce="{{ csrf_token() }}">
     // ---------------------------
     // - ASSET STATUS CHART -

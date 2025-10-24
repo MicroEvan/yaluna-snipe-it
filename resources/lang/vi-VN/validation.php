@@ -241,7 +241,7 @@ return [
 
     'generic' => [
         'invalid_value_in_field' => 'Invalid value included in this field',
-        'required' => 'Không được để trống',
+        'required' => 'This field is required',
         'email' => 'Please enter a valid email address',
     ],
 

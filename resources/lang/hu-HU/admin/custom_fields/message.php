@@ -5,7 +5,7 @@ return array(
     'field' => array(
         'invalid'   => 'A rekordmező nem létezik.',
         'already_added'   => 'Mező már hozzáadva',
-        'none_selected'   => 'Nincs mező kiválasztva',
+        'none_selected'   => 'No field selected',
 
         'create' => array(
             'error'   => 'A mező nem lett létrehozva, próbálkozz újra.',

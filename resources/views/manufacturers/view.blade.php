@@ -40,7 +40,7 @@
             </span>
             <span class="hidden-xs hidden-sm">
                 {{ trans('general.assets') }}
-                {!! ($manufacturer->assets()->AssetsForShow()->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($manufacturer->assets()->AssetsForShow()->count()).'</span>' : '' !!}
+                {!! ($manufacturer->assets()->AssetsForShow()->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($manufacturer->assets()->AssetsForShow()->count()).'</badge>' : '' !!}
             </span>
           </a>
 
@@ -52,7 +52,7 @@
             </span>
             <span class="hidden-xs hidden-sm">
               {{ trans('general.licenses') }}
-              {!! ($manufacturer->licenses->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($manufacturer->licenses->count()).'</span>' : '' !!}
+              {!! ($manufacturer->licenses->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($manufacturer->licenses->count()).'</badge>' : '' !!}
             </span>
 
           </a>
@@ -65,7 +65,7 @@
             </span>
             <span class="hidden-xs hidden-sm">
               {{ trans('general.accessories') }}
-              {!! ($manufacturer->accessories->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($manufacturer->accessories->count()).'</span>' : '' !!}
+              {!! ($manufacturer->accessories->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($manufacturer->accessories->count()).'</badge>' : '' !!}
             </span>
           </a>
         </li>
@@ -77,7 +77,7 @@
             </span>
             <span class="hidden-xs hidden-sm">
               {{ trans('general.consumables') }}
-              {!! ($manufacturer->consumables->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($manufacturer->consumables->count()).'</span>' : '' !!}
+              {!! ($manufacturer->consumables->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($manufacturer->consumables->count()).'</badge>' : '' !!}
             </span>
           </a>
         </li>
@@ -90,7 +90,7 @@
             </span>
             <span class="hidden-xs hidden-sm">
               {{ trans('general.components') }}
-              {!! ($manufacturer->components->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($manufacturer->components->count()).'</span>' : '' !!}
+              {!! ($manufacturer->components->count() > 0 ) ? '<badge class="badge badge-secondary">'.number_format($manufacturer->components->count()).'</badge>' : '' !!}
             </span>
 
           </a>

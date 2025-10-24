@@ -117,20 +117,15 @@ class AssetsController extends Controller
             'jobtitle',
         ];
 
-        $all_custom_fields = CustomField::all(); //used as a 'cache' of custom fields throughout this page load
-
-        foreach ($all_custom_fields as $field) {
-            $allowed_columns[] = $field->db_column_name();
-        }
-
         $filter = [];
 
         if ($request->filled('filter')) {
             $filter = json_decode($request->input('filter'), true);
+        }
 
-            $filter = array_filter($filter, function ($key) use ($allowed_columns) {
-                return in_array($key, $allowed_columns);
-            }, ARRAY_FILTER_USE_KEY);
+        $all_custom_fields = CustomField::all(); //used as a 'cache' of custom fields throughout this page load
+        foreach ($all_custom_fields as $field) {
+            $allowed_columns[] = $field->db_column_name();
         }
 
         $assets = Asset::select('assets.*')
@@ -146,7 +141,6 @@ class AssetsController extends Controller
                 'model.category',
                 'model.manufacturer',
                 'model.fieldset',
-                'model.depreciation',
                 'supplier'
             ); // it might be tempting to add 'assetlog' here, but don't. It blows up update-heavy users.
 
@@ -610,7 +604,7 @@ class AssetsController extends Controller
             $asset->use_text = $asset->present()->fullName;
 
             if (($asset->checkedOutToUser()) && ($asset->assigned)) {
-                $asset->use_text .= ' → ' . $asset->assigned->display_name;
+                $asset->use_text .= ' → ' . $asset->assigned->getFullNameAttribute();
             }
 
 

@@ -14,8 +14,7 @@ class AdminRecipient extends Recipient
         $this->email = trim($settings->admin_cc_email);
     }
     
-    public function getEmail()
-    {
+    public function getEmail(){
         return $this->email;
     }
 }

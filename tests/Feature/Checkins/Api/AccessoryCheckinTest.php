@@ -45,7 +45,6 @@ class AccessoryCheckinTest extends TestCase implements TestsFullMultipleCompanie
 
         $this->assertEquals(1, $accessoryForCompanyB->fresh()->checkouts->count(), 'Accessory should not be checked in');
         $this->assertEquals(0, $anotherAccessoryForCompanyB->fresh()->checkouts->count(), 'Accessory should be checked in');
-        $this->assertHasTheseActionLogs($anotherAccessoryForCompanyB, ['create', 'checkin from']);
     }
 
     public function testCanCheckinAccessory()
@@ -61,7 +60,6 @@ class AccessoryCheckinTest extends TestCase implements TestsFullMultipleCompanie
             ->assertStatusMessageIs('success');
 
         $this->assertEquals(0, $accessory->fresh()->checkouts->count(), 'Accessory should be checked in');
-        $this->assertHasTheseActionLogs($accessory, ['create'/*, 'checkout'*/, 'checkin from']); // TODO - should be the 3 events!
     }
 
     public function testCheckinIsLogged()

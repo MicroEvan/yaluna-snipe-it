@@ -34,7 +34,6 @@ class SnipeSCIMConfig extends \ArieTimmerman\Laravel\SCIMServer\SCIMConfig
 
             'validations' => [
                 $user_prefix . 'userName' => 'required',
-                $user_prefix . 'displayName' => 'nullable|string',
                 $user_prefix . 'name.givenName' => 'required',
                 $user_prefix . 'name.familyName' => 'nullable|string',
                 $user_prefix . 'externalId' => 'nullable|string',
@@ -65,7 +64,7 @@ class SnipeSCIMConfig extends \ArieTimmerman\Laravel\SCIMServer\SCIMConfig
             //eager loading
             'withRelations' => [],
             'map_unmapped' => false,
-            //            'unmapped_namespace' => 'urn:ietf:params:scim:schemas:laravel:unmapped',
+//            'unmapped_namespace' => 'urn:ietf:params:scim:schemas:laravel:unmapped',
             'description' => 'User Account',
 
             // Map a SCIM attribute to an attribute of the object.
@@ -122,7 +121,7 @@ class SnipeSCIMConfig extends \ArieTimmerman\Laravel\SCIMServer\SCIMConfig
                         'honorificSuffix' => null
                     ],
 
-                    'displayName' => AttributeMapping::eloquent("display_name"),
+                    'displayName' => null,
                     'nickName' => null,
                     'profileUrl' => null,
                     'title' => AttributeMapping::eloquent('jobtitle'),

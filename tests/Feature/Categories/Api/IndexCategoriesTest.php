@@ -13,7 +13,7 @@ class IndexCategoriesTest extends TestCase
     public function testViewingCategoryIndexRequiresPermission()
     {
         $this->actingAsForApi(User::factory()->create())
-            ->getJson(route('api.categories.index'))
+            ->getJson(route('api.departments.index'))
             ->assertForbidden();
     }
 

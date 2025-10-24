@@ -26,7 +26,7 @@ return [
     'days_without_acceptance' => 'Dani bez prihvaćanja',
     'monthly_depreciation' => 'Mjesečna amortizacija',
     'requesting_user' => 'Requesting User',
-    'requested_date' => 'Datum zahtjeva',
+    'requested_date' => 'Requested Date',
     'changed'       => 'Promijenjeno',
     'icon' => 'Icon',
 ];

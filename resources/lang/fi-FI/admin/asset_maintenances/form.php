@@ -1,7 +1,7 @@
 <?php
 
     return [
-        'select_type'            => 'Valitse huollon tyyppi',
+        'select_type'            => 'Select Maintenance Type',
         'asset_maintenance_type' => 'Laitteen huollon tyyppi',
         'title'                  => 'Otsikko',
         'start_date'             => 'Aloituspäivämäärä',

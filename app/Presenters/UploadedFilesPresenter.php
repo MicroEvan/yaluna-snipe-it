@@ -5,7 +5,7 @@ namespace App\Presenters;
 /**
  * Class AccessoryPresenter
  */
-class UploadedFilesPresenter extends Presenter
+class UploadFilesPresenter extends Presenter
 {
     /**
      * Json Column Layout for bootstrap table
@@ -18,7 +18,7 @@ class UploadedFilesPresenter extends Presenter
         $layout = [
             [
                 'field' => 'id',
-                'searchable' => true,
+                'searchable' => false,
                 'sortable' => true,
                 'switchable' => true,
                 'title' => trans('general.id'),
@@ -30,7 +30,6 @@ class UploadedFilesPresenter extends Presenter
                 'sortable' => false,
                 'switchable' => false,
                 'title' => trans('general.type'),
-                'visible' => true,
                 'formatter' => 'iconFormatter',
             ],
             [
@@ -39,17 +38,16 @@ class UploadedFilesPresenter extends Presenter
                 'sortable' => false,
                 'switchable' => true,
                 'title' => trans('general.image'),
-                'visible' => true,
-                'formatter' => 'filePreviewFormatter',
+                'formatter' => 'inlineImageFormatter',
             ],
             [
                 'field' => 'filename',
-                'searchable' => true,
-                'sortable' => true,
+                'searchable' => false,
+                'sortable' => false,
                 'switchable' => true,
                 'title' => trans('general.file_name'),
                 'visible' => true,
-                'formatter' => 'fileNameFormatter',
+                'formatter' => 'fileUploadNameFormatter',
             ],
             [
                 'field' => 'download',
@@ -58,7 +56,7 @@ class UploadedFilesPresenter extends Presenter
                 'switchable' => true,
                 'title' => trans('general.download'),
                 'visible' => true,
-                'formatter' => 'fileDownloadButtonsFormatter',
+                'formatter' => 'downloadOrOpenInNewWindowFormatter',
             ],
             [
                 'field' => 'note',
@@ -70,10 +68,10 @@ class UploadedFilesPresenter extends Presenter
             ],
             [
                 'field' => 'created_by',
-                'searchable' => true,
+                'searchable' => false,
                 'sortable' => true,
                 'title' => trans('general.created_by'),
-                'visible' => true,
+                'visible' => false,
                 'formatter' => 'usersLinkObjFormatter',
             ],
             [
@@ -82,7 +80,7 @@ class UploadedFilesPresenter extends Presenter
                 'sortable' => true,
                 'switchable' => true,
                 'title' => trans('general.created_at'),
-                'visible' => true,
+                'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
             ], [
                 'field' => 'available_actions',
@@ -90,7 +88,6 @@ class UploadedFilesPresenter extends Presenter
                 'sortable' => false,
                 'switchable' => false,
                 'title' => trans('table.actions'),
-                'visible' => true,
                 'formatter' => 'deleteUploadFormatter',
             ],
         ];

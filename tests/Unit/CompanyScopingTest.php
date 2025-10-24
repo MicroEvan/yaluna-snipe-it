@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use PHPUnit\Framework\Attributes\DataProvider;
 use App\Models\Accessory;
 use App\Models\Asset;
-use App\Models\Maintenance;
+use App\Models\AssetMaintenance;
 use App\Models\Company;
 use App\Models\Component;
 use App\Models\Consumable;
@@ -69,12 +69,12 @@ class CompanyScopingTest extends TestCase
         $this->assertCanSee($modelB);
     }
 
-    public function testMaintenanceCompanyScoping()
+    public function testAssetMaintenanceCompanyScoping()
     {
         [$companyA, $companyB] = Company::factory()->count(2)->create();
 
-        $maintenanceForCompanyA = Maintenance::factory()->for(Asset::factory()->for($companyA))->create();
-        $maintenanceForCompanyB = Maintenance::factory()->for(Asset::factory()->for($companyB))->create();
+        $assetMaintenanceForCompanyA = AssetMaintenance::factory()->for(Asset::factory()->for($companyA))->create();
+        $assetMaintenanceForCompanyB = AssetMaintenance::factory()->for(Asset::factory()->for($companyB))->create();
 
         $superUser = $companyA->users()->save(User::factory()->superuser()->make());
         $userInCompanyA = $companyA->users()->save(User::factory()->make());
@@ -83,30 +83,30 @@ class CompanyScopingTest extends TestCase
         $this->settings->disableMultipleFullCompanySupport();
 
         $this->actingAs($superUser);
-        $this->assertCanSee($maintenanceForCompanyA);
-        $this->assertCanSee($maintenanceForCompanyB);
+        $this->assertCanSee($assetMaintenanceForCompanyA);
+        $this->assertCanSee($assetMaintenanceForCompanyB);
 
         $this->actingAs($userInCompanyA);
-        $this->assertCanSee($maintenanceForCompanyA);
-        $this->assertCanSee($maintenanceForCompanyB);
+        $this->assertCanSee($assetMaintenanceForCompanyA);
+        $this->assertCanSee($assetMaintenanceForCompanyB);
 
         $this->actingAs($userInCompanyB);
-        $this->assertCanSee($maintenanceForCompanyA);
-        $this->assertCanSee($maintenanceForCompanyB);
+        $this->assertCanSee($assetMaintenanceForCompanyA);
+        $this->assertCanSee($assetMaintenanceForCompanyB);
 
         $this->settings->enableMultipleFullCompanySupport();
 
         $this->actingAs($superUser);
-        $this->assertCanSee($maintenanceForCompanyA);
-        $this->assertCanSee($maintenanceForCompanyB);
+        $this->assertCanSee($assetMaintenanceForCompanyA);
+        $this->assertCanSee($assetMaintenanceForCompanyB);
 
         $this->actingAs($userInCompanyA);
-        $this->assertCanSee($maintenanceForCompanyA);
-        $this->assertCannotSee($maintenanceForCompanyB);
+        $this->assertCanSee($assetMaintenanceForCompanyA);
+        $this->assertCannotSee($assetMaintenanceForCompanyB);
 
         $this->actingAs($userInCompanyB);
-        $this->assertCannotSee($maintenanceForCompanyA);
-        $this->assertCanSee($maintenanceForCompanyB);
+        $this->assertCannotSee($assetMaintenanceForCompanyA);
+        $this->assertCanSee($assetMaintenanceForCompanyB);
     }
 
     public function testLicenseSeatCompanyScoping()

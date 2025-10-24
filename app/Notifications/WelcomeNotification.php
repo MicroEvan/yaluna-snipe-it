@@ -5,23 +5,26 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Password;
-use App\Models\User;
 
 class WelcomeNotification extends Notification
 {
     use Queueable;
 
-    public $expire_date;
+    private $_data = [];
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(public User $user)
+    public function __construct(array $content)
     {
-        $this->user->token = Password::broker('invites')->createToken($user);
-        $this->user->expire_date = now()->addMinutes((int) config('auth.passwords.invites.expire', 2880))->format('F j, Y, g:i a');
+        $this->_data['email'] = htmlspecialchars_decode($content['email']);
+        $this->_data['first_name'] = htmlspecialchars_decode($content['first_name']);
+        $this->_data['last_name'] = htmlspecialchars_decode($content['last_name']);
+        $this->_data['username'] = htmlspecialchars_decode($content['username']);
+        $this->_data['password'] = htmlspecialchars_decode($content['password']);
+        $this->_data['url'] = config('app.url');
     }
 
     /**
@@ -41,9 +44,8 @@ class WelcomeNotification extends Notification
      */
     public function toMail()
     {
-
         return (new MailMessage())
-            ->subject(trans('mail.welcome', ['name' => $this->user->first_name.' '.$this->user->last_name]))
-            ->markdown('notifications.Welcome', $this->user->toArray());
+            ->subject(trans('mail.welcome', ['name' => $this->_data['first_name'].' '.$this->_data['last_name']]))
+            ->markdown('notifications.Welcome', $this->_data);
     }
 }

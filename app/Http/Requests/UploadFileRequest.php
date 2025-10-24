@@ -31,7 +31,7 @@ class UploadFileRequest extends Request
         $max_file_size = Helper::file_upload_max_size();
 
         return [
-            'file.*' => 'required|mimes:'.config('filesystems.allowed_upload_extensions_for_validator').'|max:'.$max_file_size,
+            'file.*' => 'required|mimes:png,gif,jpg,svg,jpeg,doc,docx,pdf,txt,zip,rar,xls,xlsx,lic,xml,rtf,json,webp,avif|max:'.$max_file_size,
         ];
     }
 
@@ -80,20 +80,9 @@ class UploadFileRequest extends Request
     {
         $attributes = [];
 
-        if (($this->file) && (is_array($this->file))) {
-
+        if ($this->file) {
             for ($i = 0; $i < count($this->file); $i++) {
-
-                try {
-
-                    if ($this->file[$i]) {
-                        $attributes['file.'.$i] = $this->file[$i]->getClientOriginalName();
-                    }
-
-                } catch (\Exception $e) {
-                    $attributes['file.'.$i] = 'Invalid file';
-                }
-
+                $attributes['file.'.$i] = $this->file[$i]->getClientOriginalName();
             }
         }
 

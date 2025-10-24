@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-{{ trans('general.hello_name', array('name' => $user->display_name)) }}
+{{ trans('general.hello_name', array('name' => $user->present()->getFullNameAttribute())) }}
 @parent
 @stop
 
@@ -37,7 +37,7 @@
           <select name="user_id" id="user_id" class="form-control select2" onchange="this.form.submit()" style="width: 250px; display: inline-block;">
             @foreach ($subordinates as $subordinate)
               <option value="{{ $subordinate->id }}" {{ (int)$selectedUserId === (int)$subordinate->id ? ' selected' : '' }}>
-                {{ $subordinate->display_name }}
+                {{ $subordinate->present()->fullName() }}
                 @if ($subordinate->id == auth()->id())
                   ({{ trans('general.me') }})
                 @endif
@@ -133,7 +133,7 @@
               <div class="col-md-3 col-xs-12 col-sm-push-9">
 
                 <div class="col-md-12 text-center">
-                  <img src="{{ $user->present()->gravatar() }}"  class=" img-thumbnail hidden-print" style="margin-bottom: 20px;" alt="{{ $user->display_name }}" alt="User avatar">
+                  <img src="{{ $user->present()->gravatar() }}"  class=" img-thumbnail hidden-print" style="margin-bottom: 20px;" alt="{{ $user->present()->fullName() }}" alt="User avatar">
                 </div>
                 @can('self.profile')
                   <div class="col-md-12">
@@ -204,7 +204,7 @@
                       {{ trans('admin/users/table.name') }}
                     </div>
                     <div class="col-md-9 col-sm-2">
-                      {{ $user->display_name }}
+                      {{ $user->present()->fullName() }}
                     </div>
 
                   </div>
@@ -309,7 +309,9 @@
                         {{ trans('admin/users/table.manager') }}
                       </div>
                       <div class="col-md-9">
-                        <x-full-user-name :user="$user->manager" />
+                        <a href="{{ route('users.show', $user->manager->id) }}">
+                          {{ $user->manager->getFullNameAttribute() }}
+                        </a>
                       </div>
 
                     </div>

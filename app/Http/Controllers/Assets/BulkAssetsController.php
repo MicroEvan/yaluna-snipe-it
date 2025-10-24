@@ -112,47 +112,11 @@ class BulkAssetsController extends Controller
         // This handles all of the pivot sorting below (versus the assets.* fields in the allowed_columns array)
         $column_sort = in_array($sort_override, $allowed_columns) ? $sort_override : 'assets.id';
 
-        $query = Asset::with('assignedTo', 'location', 'model')
+        $assets = Asset::with('assignedTo', 'location', 'model')
                 ->whereIn('assets.id', $asset_ids)
                 ->withTrashed();
 
-
-        switch ($sort_override) {
-            case 'model':
-                $query->OrderModels($order);
-                break;
-            case 'model_number':
-                $query->OrderModelNumber($order);
-                break;
-            case 'category':
-                $query->OrderCategory($order);
-                break;
-            case 'manufacturer':
-                $query->OrderManufacturer($order);
-                break;
-            case 'company':
-                $query->OrderCompany($order);
-                break;
-            case 'location':
-                $query->OrderLocation($order);
-                break;
-            case 'rtd_location':
-                $query->OrderRtdLocation($order);
-                break;
-            case 'status_label':
-                $query->OrderStatus($order);
-                break;
-            case 'supplier':
-                $query->OrderSupplier($order);
-                break;
-            case 'assigned_to':
-                $query->OrderAssigned($order);
-                break;
-            default:
-                $query->orderBy($column_sort, $order);
-                break;
-        }
-        $assets = $query->get();
+        $assets = $assets->get();
 
         if ($assets->isEmpty()) {
             Log::debug('No assets were found for the provided IDs', ['ids' => $asset_ids]);
@@ -161,7 +125,6 @@ class BulkAssetsController extends Controller
 
         $models = $assets->unique('model_id');
         $modelNames = [];
-
         foreach($models as $model) {
             $modelNames[] = $model->model->name;
         }
@@ -197,6 +160,7 @@ class BulkAssetsController extends Controller
 
                 case 'edit':
                     $this->authorize('update', Asset::class);
+
                     return view('hardware/bulk')
                         ->with('assets', $asset_ids)
                         ->with('statuslabel_list', Helper::statusLabelList())
@@ -205,7 +169,40 @@ class BulkAssetsController extends Controller
             }
         }
 
-
+        switch ($sort_override) {
+            case 'model':
+                $assets->OrderModels($order);
+                break;
+            case 'model_number':
+                $assets->OrderModelNumber($order);
+                break;
+            case 'category':
+                $assets->OrderCategory($order);
+                break;
+            case 'manufacturer':
+                $assets->OrderManufacturer($order);
+                break;
+            case 'company':
+                $assets->OrderCompany($order);
+                break;
+            case 'location':
+                $assets->OrderLocation($order);
+            case 'rtd_location':
+                $assets->OrderRtdLocation($order);
+                break;
+            case 'status_label':
+                $assets->OrderStatus($order);
+                break;
+            case 'supplier':
+                $assets->OrderSupplier($order);
+                break;
+            case 'assigned_to':
+                $assets->OrderAssigned($order);
+                break;
+            default:
+                $assets->orderBy($column_sort, $order);
+                break;
+        }
 
         return redirect()->back()->with('error', 'No action selected');
     }
@@ -224,8 +221,11 @@ class BulkAssetsController extends Controller
         $error_array = array();
 
         // Get the back url from the session and then destroy the session
+        $bulk_back_url = route('hardware.index');
 
-        $bulk_back_url = $request->session()->pull('bulk_back_url', url()->previous());
+        if ($request->session()->has('bulk_back_url')) {
+            $bulk_back_url = $request->session()->pull('bulk_back_url');
+        }
 
        $custom_field_columns = CustomField::all()->pluck('db_column')->toArray();
 
@@ -540,13 +540,7 @@ class BulkAssetsController extends Controller
             } // end asset foreach
 
             if ($has_errors > 0) {
-                session()->put('bulkedit_ids', $request->input('ids'));
-                session()->put('bulk_asset_errors',$error_array);
-
-                return redirect()
-                    ->route('hardware.index')
-                    ->with('bulk_asset_errors', $error_array)
-                    ->withInput();
+                return redirect($bulk_back_url)->with('bulk_asset_errors', $error_array);
             }
 
             return redirect($bulk_back_url)->with('success', trans('admin/hardware/message.update.success'));
@@ -637,7 +631,6 @@ class BulkAssetsController extends Controller
             $admin = auth()->user();
 
             $target = $this->determineCheckoutTarget();
-            session()->put(['checkout_to_type' => $target]);
 
             if (! is_array($request->get('selected_assets'))) {
                 return redirect()->route('hardware.bulkcheckout.show')->withInput()->with('error', trans('admin/hardware/message.checkout.no_assets_selected'));
@@ -738,34 +731,5 @@ class BulkAssetsController extends Controller
              return ['status' => true, 'tags' => $undeployableTags, 'asset_ids' => $filtered_ids];
          }
         return false;
-    }
-
-    public function bulkEditForm(): View|RedirectResponse
-    {
-        $this->authorize('update', Asset::class);
-
-        $asset_ids = session()->pull('bulkedit_ids', []);
-
-        if (empty($asset_ids)) {
-            return redirect()->route('hardware.index')->with('error', trans('admin/hardware/message.update.no_assets_selected'));
-        }
-
-        $assets = Asset::with('model')->withTrashed()->whereIn('id', $asset_ids)->get();
-
-        if ($assets->isEmpty()) {
-            return redirect()->route('hardware.index')->with('error', trans('admin/hardware/message.update.assets_do_not_exist_or_are_invalid'));
-        }
-
-        $models = $assets->unique('model_id');
-        $modelNames = [];
-        foreach ($models as $model) {
-            $modelNames[] = $model->model->name;
-        }
-
-        return view('hardware/bulk')
-            ->with('assets', $asset_ids)
-            ->with('statuslabel_list', Helper::statusLabelList())
-            ->with('models', $models->pluck(['model']))
-            ->with('modelNames', $modelNames);
     }
 }

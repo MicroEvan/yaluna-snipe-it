@@ -1,5 +1,5 @@
 {
-    "name": "Snipe-IT",
+    "name": "Yaluna Snipe-IT",
     "description": "Open source asset management.",
     "keywords": [
       "asset management",
@@ -24,7 +24,7 @@
       },
       "APP_URL": {
         "description": "URL where your Snipe-IT install will be available at.",
-        "value": "https://your-app-name.herokuapp.com"
+        "value": "https://assets.yalunaictsolutions.com"
       },
       "APP_TIMEZONE": {
         "description": "Which timezone do you want to use for your install? (http://php.net/manual/en/timezones.php)",

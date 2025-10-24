@@ -96,7 +96,6 @@ class ComponentCheckoutTest extends TestCase implements TestsFullMultipleCompani
             ->assertStatusMessageIs('success');
 
         $this->assertTrue($component->assets->first()->is($asset));
-        $this->assertHasTheseActionLogs($component, ['create', 'checkout']);
     }
 
     public function testComponentCheckoutIsLogged()

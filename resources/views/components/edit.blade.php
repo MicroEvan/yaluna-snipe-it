@@ -6,7 +6,6 @@
     'formAction' => (isset($item->id)) ? route('components.update', ['component' => $item->id]) : route('components.store'),
     'index_route' => 'components.index',
     'options' => [
-                'back' => trans('admin/hardware/form.redirect_to_type',['type' => trans('general.previous_page')]),
                 'index' => trans('admin/hardware/form.redirect_to_all', ['type' => 'components']),
                 'item' => trans('admin/hardware/form.redirect_to_type', ['type' => trans('general.component')]),
                ]

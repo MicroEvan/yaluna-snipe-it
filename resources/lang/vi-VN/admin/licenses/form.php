@@ -3,11 +3,11 @@
 return array(
 
     'asset'             => 'Tài sản',
-    'checkin'           => 'Cấp phát',
+    'checkin'           => 'Đăng ký vào',
     'create'            => 'Tạo giấp phép',
     'expiration'        => 'Ngày hết hạn',
-    'license_key'       => 'Key bản quyền',
-    'maintained'        => 'Đã bảo trì',
+    'license_key'       => 'Mã sản phẩm',
+    'maintained'        => 'Đã duy trì',
     'name'              => 'Tên phần mềm',
     'no_depreciation'   => 'Không khấu hao',
     'purchase_order'    => 'Số PO',
@@ -16,7 +16,7 @@ return array(
     'seats'             => 'Số lượng',
     'termination_date'  => 'Ngày huỷ bỏ',
     'to_email'          => 'Đã cấp phép cho email',
-    'to_name'           => 'Đã cấp phép cho người dùng',
+    'to_name'           => 'Đã cấp phép cho tên',
     'update'            => 'Cập nhập giấy phép sử dụng',
     'checkout_help'     => 'Bạn phải kiểm tra bản quyền đã cấp phát đến phần cứng của tài sản hoặc một cá nhân. Bạn có thể lựa chọn cả hai, nhưng chủ thể của tài sản phải tương ứng với người mà bạn đang kiểm tra cấp phát tài sản.'
 );

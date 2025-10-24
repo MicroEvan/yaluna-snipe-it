@@ -24,7 +24,6 @@
                                         data-bulk-button-id="#bulkAssetEditButton"
                                         data-bulk-form-id="#assetsBulkForm"
                                         id="assetsListingTable"
-                                        data-buttons="assetButtons"
                                         class="table table-striped snipe-table"
                                         data-url="{{route('api.assets.index', ['status_id' => $statuslabel->id]) }}"
                                         data-export-options='{

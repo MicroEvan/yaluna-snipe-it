@@ -51,7 +51,7 @@ class ManufacturersController extends Controller
         $manufacturers_count = Manufacturer::withTrashed()->count();
 
         if ($manufacturers_count == 0) {
-            Artisan::call('db:seed', ['--class' => 'Database\\Seeders\\ManufacturerSeeder', '--force' => true]);
+            Artisan::call('db:seed', ['--class' => 'ManufacturerSeeder']);
             return redirect()->route('manufacturers.index')->with('success', trans('general.seeding.manufacturers.success'));
         }
 

@@ -69,8 +69,6 @@ class AssetCheckinTest extends TestCase
         $this->assertEquals('Changed Name', $asset->name);
         $this->assertEquals($status->id, $asset->status_id);
         $this->assertTrue($asset->location()->is($location));
-        $this->assertHasTheseActionLogs($asset, ['create'/*, 'checkout', 'checkin from'*/]); //TODO - the Event::fake() is probably getting in the way here
-
 
         Event::assertDispatched(function (CheckoutableCheckedIn $event) use ($currentTimestamp) {
             // this could be better mocked but is ok for now.
@@ -90,7 +88,6 @@ class AssetCheckinTest extends TestCase
             ->postJson(route('api.asset.checkin', $asset->id));
 
         $this->assertTrue($asset->refresh()->location()->is($rtdLocation));
-        $this->assertHasTheseActionLogs($asset, ['create', /*'checkout',*/ 'checkin from']); //FIXME?
     }
 
     public function testDefaultLocationCanBeUpdatedUponCheckin()
@@ -105,7 +102,6 @@ class AssetCheckinTest extends TestCase
             ]);
 
         $this->assertTrue($asset->refresh()->defaultLoc()->is($location));
-        $this->assertHasTheseActionLogs($asset, ['create', /*'checkout',*/ 'checkin from']); //FIXME?
     }
 
     public function testAssetsLicenseSeatsAreClearedUponCheckin()

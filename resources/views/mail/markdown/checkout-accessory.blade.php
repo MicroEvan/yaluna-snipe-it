@@ -1,7 +1,7 @@
 @component('mail::message')
-# {{ trans('mail.hello').' '.$target.','}}
+# {{ trans('mail.hello') }} {{ $target->present()->fullName() }},
 
-{{ $introduction_line }}
+{{ trans('mail.new_item_checked') }}
 
 @if (($snipeSettings->show_images_in_email =='1') && $item->getImageUrl())
 <center><img src="{{ $item->getImageUrl() }}" alt="Accessory" style="max-width: 570px;"></center>
@@ -14,12 +14,6 @@
 | **{{ trans('mail.checkout_date') }}** | {{ $checkout_date }} |
 @endif
 | **{{ trans('general.accessory') }}** | {{ $item->name }} |
-@if (isset($item->category))
-    | **{{ trans('general.category') }}** | {{ $item->category->name }} |
-@endif
-@if (isset($item->model_number))
-    | **{{ trans('general.model_no') }}** | {{ $item->model_number }} |
-@endif
 @if (isset($item->manufacturer))
 | **{{ trans('general.manufacturer') }}** | {{ $item->manufacturer->name }} |
 @endif
@@ -33,7 +27,7 @@
 | **{{ trans('mail.additional_notes') }}** | {{ $note }} |
 @endif
 @if ($admin)
-| **{{ trans('general.administrator') }}** | {{ $admin->display_name }} |
+| **{{ trans('general.administrator') }}** | {{ $admin->present()->fullName() }} |
 @endif
 @endcomponent
 

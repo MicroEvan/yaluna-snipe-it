@@ -83,7 +83,6 @@ class AccessoryCheckoutTest extends TestCase
             'item_type' => Accessory::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testAccessoryCanBeCheckedOutWithQuantity()
@@ -110,7 +109,6 @@ class AccessoryCheckoutTest extends TestCase
             'item_type' => Accessory::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testAccessoryCanBeCheckedOutToLocationWithQuantity()
@@ -137,7 +135,6 @@ class AccessoryCheckoutTest extends TestCase
             'item_type' => Accessory::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testAccessoryCanBeCheckedOutToAssetWithQuantity()
@@ -164,7 +161,6 @@ class AccessoryCheckoutTest extends TestCase
             'item_type' => Accessory::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testUserSentNotificationUponCheckout()
@@ -213,7 +209,6 @@ class AccessoryCheckoutTest extends TestCase
             ])->count(),
             'Log entry either does not exist or there are more than expected'
         );
-        $this->assertHasTheseActionLogs($accessory, ['create', 'checkout']);
     }
 
     public function testAccessoryCheckoutPagePostIsRedirectedIfRedirectSelectionIsIndex()

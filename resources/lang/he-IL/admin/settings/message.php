@@ -11,11 +11,11 @@ return [
         'file_deleted'          => 'קובץ הגיבוי נמחק בהצלחה.',
         'generated'             => 'קובץ גיבוי חדש נוצר בהצלחה.',
         'file_not_found'        => 'קובץ גיבוי זה לא נמצא בשרת.',
-        'restore_warning'       => 'כן, שחזר זאת. אני מאשר שזה ידרוס מידע קיים במסד הנתונים. זה גם ינתק את כלל המשתמשים הקיימים (כולל אותך).',
+        'restore_warning'       => 'Yes, restore it. I acknowledge that this will overwrite any existing data currently in the database. This will also log out all of your existing users (including you).',
         'restore_confirm'       => 'האם ברצונך לשחזר את המסד נתונים מ: קובץ?'
     ],
     'restore' => [
-        'success'               => 'גיבוי המערכת שלך שוחזר. תתחבר מחדש בבקשה.'
+        'success'               => 'Your system backup has been restored. Please log in again.'
     ],
     'purge' => [
         'error'     => 'אירעה שגיאה בעת הטיהור.',

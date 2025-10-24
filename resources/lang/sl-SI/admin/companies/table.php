@@ -4,7 +4,7 @@ return array(
     'create'    => 'Ustvari podjetje',
     'email'     => 'E-naslov podjetja',
     'title'     => 'Podjetje',
-    'phone'     => 'Telefon podjetja',
+    'phone'     => 'Company Phone',
     'update'    => 'Posodobi podjetje',
     'name'      => 'Naziv podjetja',
     'id'        => 'ID',

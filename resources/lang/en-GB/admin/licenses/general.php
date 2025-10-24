@@ -24,12 +24,12 @@ return array(
         [
             'checkin_all'           => [
                 'button'            => 'Check In All Seats',
-                'modal'             => 'This action will checkin one seat. | This action will checkin all :checkedout_seats_count seats for this licence.',
+                'modal'             => 'This action will checkin one seat. | This action will checkin all :checkedout_seats_count seats for this license.',
                 'enabled_tooltip'   => 'Check in ALL seats for this licence from both users and assets',
                 'disabled_tooltip'  => 'This is disabled because there are no seats currently checked out',
                 'disabled_tooltip_reassignable'  => 'This is disabled because the Licence is not re-assignable',
                 'success'           => 'Licence successfully checked in! | All licences were successfully checked in!',
-                'log_msg'           => 'Checked in via bulk licence checkin in licence GUI',
+                'log_msg'           => 'Checked in via bulk license checkin in license GUI',
             ],
 
             'checkout_all'              => [

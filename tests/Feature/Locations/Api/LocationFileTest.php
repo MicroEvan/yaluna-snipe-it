@@ -132,7 +132,7 @@ class LocationFileTest extends TestCase
         // List the files to get the file ID
         $result = $this->actingAsForApi($user)
             ->getJson(
-                route('api.files.index', ['object_type' => 'locations', 'id' => $location->id, 'order' => 'asc'])
+                route('api.files.index', ['object_type' => 'locations', 'id' => $location->id])
             )
             ->assertOk()
             ->assertJsonStructure(

@@ -4,7 +4,6 @@ return [
     '2FA_reset'             => 'ریست ورود دو مرحله‌ای',
     'accessories'			=> 'تجهیزات جانبی',
     'activated'			    => 'فعال شد',
-    'login_status'		    => 'Login Status',
     'accepted_date'         => 'تاریخ قبول شد',
     'accessory'				=> 'لوازم جانبی',
     'accessory_report'		=> 'گزارش لوازم جانبی',
@@ -30,13 +29,11 @@ return [
     'asset_report'          => 'گزارش دارایی',
     'asset_tag'				=> 'برچسب دارایی',
     'asset_tags'            => 'نام دارایی',
-    'available'		        => 'Available',
     'assets_available'		=> 'دارایی های موجود',
     'accept_assets'         => 'پذیرش دارایی ها :name',
     'accept_assets_menu'    => 'دارایی های پذیرفته',
     'accept_item'           => 'تایید آیتم',
     'audit'				    => 'حسابرسی',
-    'audited'				=> 'Audited',
     'audits'				=> 'Audits',
     'audit_report'			=> 'حسابرسی حسابرسی',
     'assets'				=> 'دارایی ها',
@@ -146,7 +143,7 @@ return [
     'example'				=> ' مثال: ',
 
     'files'                 => 'فایل ها',
-    'file_name'				=> 'File Name',
+    'file_name'				=> 'فایل',
     'file_type'             => 'نوع فايل',
     'filesize'              => 'اندازه فایل',
     'file_uploads'			=> 'بارگذاری پرونده',
@@ -245,13 +242,11 @@ return [
     'order_number'          => 'شماره سفارش',
     'only_deleted'          => 'فقط دارایی های حذف شده',
     'page_menu'				=> 'نمایش_موارد_منو',
-    'page_error'            => 'Could not determine previous page. Redirected to homepage.',
     'pagination_info'		=> 'نمایش_آغاز_تا_پایان_از_همه_موارد',
     'pending'				=> 'در انتظار',
     'people'				=> 'مردم',
     'per_page'				=> 'نتایج در هر صفحه',
     'previous'				=> 'قبلي',
-    'previous_page'			=> 'Previous Page',
     'processing'			=> 'در حال پردازش',
     'profile'				=> 'پروفایل شما',
     'purchase_cost'                              => 'هزینه خرید',
@@ -340,10 +335,10 @@ return [
     'username'              => 'نام کاربری',
     'update'                => 'بروزرسانی',
     'updating_item' => 'بروزرسانی :item',
-    'upload_filetypes_help' => 'Allowed filetypes are: :allowed_filetypes. Max upload size allowed is :size.',
+    'upload_filetypes_help'      => 'انواع فایل های مجاز عبارتند از png، gif، jpg، jpeg، doc، docx، pdf، xls، xlsx، txt، lic، xml، zip، rtf و rar. حداکثر اندازه مجاز بارگذاری: اندازه است.
+',
     'uploaded'              => 'بارگزاری شد',
     'user'					=> 'کاربر',
-    'password'				=> 'رمز عبور',
     'accepted'			    => 'تأیید شد',
     'declined'			    => 'خودداری شد',
     'declined_note'         => 'یادداشت های رد شده',
@@ -362,14 +357,11 @@ return [
     'zip'  					=> 'زیپ',
     'noimage'				=> 'هیچ تصویری بارگزاری نشد یا تصویری یافت نشد.',
     'file_does_not_exist'   => 'فایل درخواستی روی سرور وجود ندارد.',
-    'file_not_inlineable'        => 'The requested file cannot be opened inline in your browser. You can download it instead.',
-    'open_new_window'       => 'Open this file in a new window',
     'file_upload_success'   => 'فایل با موفقیت بارگذاری شد!',
     'no_files_uploaded'     => 'فایل با موفقیت بارگذاری شد!',
     'token_expired'         => 'اعتبار فرم شما تمام شده است. لطفا دوباره تلاش کنید.',
     'login_enabled'         => 'ورود فعال شد
 ',
-    'login_disabled'        => 'Login Disabled',
     'audit_due'             => 'موعد حسابرسی
 ',
     'audit_due_days'        => '{}Assets Due or Overdue for Audit|[1]Assets Due or Overdue for Audit Within a Day|[2,*]Assets Due or Overdue for Audit Within :days Days',
@@ -380,8 +372,6 @@ return [
 ',
     'accept'                => 'دارایی های پذیرفته',
     'i_accept'              => 'می پذیرم',
-    'i_decline_item'        => 'Decline this item',
-    'i_accept_item'         => 'Accept this item',
     'i_decline'             => 'نمی پذیرم',
     'accept_decline'        => 'قبول/رد کردن
 ',
@@ -562,7 +552,7 @@ return [
     'update_existing_values'    => 'Update Existing Values?',
     'auto_incrementing_asset_tags_disabled_so_tags_required' => 'Generating auto-incrementing asset tags is disabled so all rows need to have the "Asset Tag" column populated.',
     'auto_incrementing_asset_tags_enabled_so_now_assets_will_be_created' => 'Note: Generating auto-incrementing asset tags is enabled so assets will be created for rows that do not have "Asset Tag" populated. Rows that do have "Asset Tag" populated will be updated with the provided information.',
-    'send_welcome_email_to_users'   => ' Send Welcome Email for new Users? Note that only users with a valid email address and who are marked as activated in your import file will received a welcome.',
+    'send_welcome_email_to_users'   => ' Send Welcome Email for new Users?',
     'send_email'                => 'Send Email',
     'call'                      => 'Call number',
     'back_before_importing'     => 'Backup before importing?',
@@ -638,8 +628,6 @@ return [
     'phone'                   => 'تلفن',
     'fax'                   => 'دورنگار',
     'contact'                   => 'Contact',
-    'show_admins' => 'Admin Users',
-    'show_superadmins' => 'Superusers',
     'edit_fieldset' => 'Edit fieldset fields and options',
     'permission_denied_superuser_demo' => 'Permission denied. You cannot update user information for superadmins on the demo.',
     'pwd_reset_not_sent' => 'User is not activated, is LDAP synced, or does not have an email address',
@@ -686,11 +674,7 @@ return [
     'by' => 'توسط',
     'version' => 'Version',
     'build' => 'build',
-    'use_cloned_image' => 'Clone image from original',
-    'use_cloned_image_help' => 'You may clone the original image or you can upload a new one using the upload field below.',
-    'use_cloned_no_image_help' => 'This item does not have an associated image and instead inherits from the model or category it belongs to. If you would like to use a specific image for this item, you can upload a new one below.',
     'footer_credit' => '<a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> is open source software, made with <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">love</span> by <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a>.',
-    'set_password' => 'Set a Password',
 
 // Add form placeholders here
     'placeholders' => [
@@ -757,13 +741,6 @@ return [
         'nofiles' => 'No files were included for upload',
         'confirm_delete' => 'Are you sure you want to delete this file?',
     ],
-
-    'depreciation_options' => [
-        'amount' => 'Amount',
-        'percent' => 'Percentage',
-    ],
-
-    'months_plural' => '1 month|:count months',
 
 
 ];

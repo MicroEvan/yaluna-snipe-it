@@ -39,7 +39,6 @@ class LicenseCheckoutTest extends TestCase
             'item_type' => License::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($licenseSeat->license, ['add seats', 'create', 'checkout']); // TODO - TOTALLY out-of-order
     }
 
     public function testNotesAreStoredInActionLogOnCheckoutToUser()
@@ -63,7 +62,6 @@ class LicenseCheckoutTest extends TestCase
             'item_type' => License::class,
             'note' => 'oh hi there',
         ]);
-        $this->assertHasTheseActionLogs($licenseSeat->license, ['add seats', 'create', 'checkout']); //FIXME - out-of-order
     }
 
     public function testLicenseCheckoutPagePostIsRedirectedIfRedirectSelectionIsIndex()

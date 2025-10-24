@@ -4,6 +4,7 @@ namespace App\Http\Transformers;
 
 use App\Helpers\Helper;
 use App\Models\Actionlog;
+use App\Models\Asset;
 use Illuminate\Database\Eloquent\Collection;
 
 class ProfileTransformer
@@ -25,7 +26,7 @@ class ProfileTransformer
             'id' => (int) $file->id,
             'icon' => Helper::filetype_icon($file->filename),
             'item' => ($file->item) ? [
-                'name' => $file->item->display_name ? e($file->item->display_name) : null,
+                'name' => ($file->itemType()=='user') ? e($file->item->getFullNameAttribute()) : e($file->item->getDisplayNameAttribute()),
                 'type' => e($file->itemType()),
             ] : null,
             'filename' => e($file->filename),

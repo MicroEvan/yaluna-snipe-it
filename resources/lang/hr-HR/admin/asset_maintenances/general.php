@@ -8,9 +8,9 @@
         'repair'             => 'Popravak',
         'maintenance'        => 'Održavanje',
         'upgrade'            => 'nadogradnja',
-        'calibration'        => 'Kalibracija',
-        'software_support'   => 'Podrška Softvera',
-        'hardware_support'   => 'Podrška Hardvera',
-        'configuration_change'   => 'Promjena Konfiguracije',
+        'calibration'        => 'Calibration',
+        'software_support'   => 'Software Support',
+        'hardware_support'   => 'Hardware Support',
+        'configuration_change'   => 'Configuration Change',
         'pat_test'           => 'PAT Test',
     ];

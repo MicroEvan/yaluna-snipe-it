@@ -6,6 +6,12 @@
 @parent
 @stop
 
+
+@section('header_right')
+<a href="{{ route('categories.create') }}" class="btn btn-primary pull-right">
+  {{ trans('general.create') }}</a>
+@stop
+
 {{-- Page content --}}
 @section('content')
 
@@ -20,7 +26,6 @@
             data-side-pagination="server"
             data-sort-order="asc"
             id="categoryTable"
-            data-buttons="categoryButtons"
             class="table table-striped snipe-table"
             data-url="{{ route('api.categories.index') }}"
             data-export-options='{

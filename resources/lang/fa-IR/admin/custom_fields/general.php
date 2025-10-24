@@ -5,7 +5,8 @@ return [
     'manage'                    => 'مدیریت',
     'field'		                => 'فیلد',
     'about_fieldsets_title'		=> 'درباره ی تنظیمات فیلد',
-    'about_fieldsets_text'		=> 'تنظیمات فیلد به شما امکان این را می دهد که گروه های فیلدهای سفارشی ایجاد کنید که مرتبا برای انواع مدل های دارایی خاص مورد استفاده ی مجدد قرار می گیرند.',
+    'about_fieldsets_text'		=> 'مجموعه‌های فیلد به شما امکان می‌دهند گروه‌هایی از فیلدهای سفارشی ایجاد کنید که اغلب برای انواع مدل دارایی خاص دوباره استفاده می‌شوند.
+',
     'custom_format'             => 'فرمت Regex سفارشی...
 ',
     'encrypt_field'      	        => 'مقدار این فیلد را در پایگاه داده رمزگذاری کنید',
@@ -35,7 +36,7 @@ return [
     'create_field'            => 'فیلد سفارشی جدید',
     'create_field_title' => 'یک فیلد سفارشی جدید ایجاد کنید
 ',
-    'value_encrypted'      	        => 'The value of this field is encrypted in the database. Only users with permission to view encrypted custom fields will be able to view the decrypted value',
+    'value_encrypted'      	        => 'ارزش این فیلد در پایگاه داده رمزگذاری شده است. فقط کاربران مدیریت قادر به مشاهده مقدار رمزگشایی خواهند شد',
     'show_in_email'     => 'Include the value of this field in checkout emails sent to the user? Encrypted fields cannot be included in emails',
     'show_in_email_short' => 'Include in emails',
     'help_text' => 'متن راهنما',

@@ -10,7 +10,7 @@ return [
     'group_admin' 	 		=> 'Skrbnik skupine',
     'allow' 	 			=> 'Dovoli',
     'deny' 	 				=> 'Zavrni',
-    'permission'            => 'Dovoljenje',
+    'permission'            => 'Permission',
     'grant'                 => 'Omogoči',
-    'no_permissions'        => 'Ta skupina nima dovoljenj.'
+    'no_permissions'        => 'This group has no permissions.'
 ];

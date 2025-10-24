@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Users;
+use App\Http\Controllers\Users\UserFilesController;
 use Illuminate\Support\Facades\Route;
 
 // User Management
@@ -62,6 +63,30 @@ Route::group(['prefix' => 'users', 'middleware' => ['auth']], function () {
             'getUnsuspend'
         ]
     )->name('unsuspend/user');
+
+    Route::post(
+        '{user}/upload',
+        [
+            Users\UserFilesController::class, 
+            'store'
+        ]
+    )->name('upload/user')->withTrashed();
+
+    Route::delete(
+        '{userId}/deletefile/{fileId}',
+        [
+            Users\UserFilesController::class, 
+            'destroy'
+        ]
+    )->name('userfile.destroy');
+
+    Route::get(
+        '{user}/showfile/{fileId}',
+        [
+            Users\UserFilesController::class, 
+            'show'
+        ]
+    )->name('show/userfile')->withTrashed();
 
     Route::post(
         '{userId}/password',

@@ -14,7 +14,7 @@ return array(
     */
 
     'today' => 'Today',
-    'clear' => 'Wyczyść',
+    'clear' => 'Clear',
     'days' => [
         'sunday' => 'Sunday',
         'monday' => 'Monday',
@@ -32,12 +32,12 @@ return array(
         'wednesday' =>  'Wed',
         'thursday' =>  'Thu',
         'friday' =>  'Fri',
-        'saturday' =>  'Sob',
+        'saturday' =>  'Sat',
     ],
 
     'min_days' => [
-        'sunday' => 'Ni',
-        'monday' => '',
+        'sunday' => 'Su',
+        'monday' => 'Mo',
         'tuesday' => 'Tu',
         'wednesday' =>  'We',
         'thursday' =>  'Th',
@@ -46,7 +46,7 @@ return array(
     ],
 
     'months' => [
-        'january' => '',
+        'january' => 'January',
         'february' => 'February',
         'march' => 'March',
         'april' => 'April',
@@ -72,7 +72,7 @@ return array(
         'september' => 'Sep',
         'october' => 'Oct',
         'november' => 'Nov',
-        'december' => 'Gru',
+        'december' => 'Dec',
     ],
 
 );

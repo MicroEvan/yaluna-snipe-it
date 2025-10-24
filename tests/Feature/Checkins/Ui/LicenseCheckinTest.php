@@ -20,7 +20,7 @@ class LicenseCheckinTest extends TestCase
             ->assertForbidden();
     }
 
-    public function testNonReassignableLicenseSeatCantBeCheckedOut()
+    public function testCannotCheckinNonReassignableLicense()
     {
         $licenseSeat = LicenseSeat::factory()
             ->notReassignable()
@@ -28,11 +28,13 @@ class LicenseCheckinTest extends TestCase
             ->create();
 
         $this->actingAs(User::factory()->checkoutLicenses()->create())
-            ->post(route('licenses.checkin.save', $licenseSeat));
+            ->post(route('licenses.checkin.save', $licenseSeat), [
+                'notes' => 'my note',
+                'redirect_option' => 'index',
+            ])
+            ->assertSessionHas('error', trans('admin/licenses/message.checkin.not_reassignable') . '.');
 
-        $licenseSeat->refresh();
-
-        $this->assertEquals(true, $licenseSeat->unreassignable_seat);
+        $this->assertNotNull($licenseSeat->fresh()->assigned_to);
     }
 
     public function testCannotCheckinLicenseThatIsNotAssigned()

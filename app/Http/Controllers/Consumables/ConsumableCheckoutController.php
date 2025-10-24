@@ -111,7 +111,6 @@ class ConsumableCheckoutController extends Controller
 
 
         // Redirect to the new consumable page
-        return Helper::getRedirectOption($request, $consumable->id, 'Consumables')
-            ->with('success', trans('admin/consumables/message.checkout.success'));
+        return redirect()->to(Helper::getRedirectOption($request, $consumable->id, 'Consumables'))->with('success', trans('admin/consumables/message.checkout.success'));
     }
 }

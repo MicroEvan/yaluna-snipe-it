@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use RuntimeException;
 use Tests\Support\AssertsAgainstSlackNotifications;
-use Tests\Support\AssertHasActionLogs;
 use Tests\Support\CanSkipTests;
 use Tests\Support\CustomTestMacros;
 use Tests\Support\InteractsWithAuthentication;
@@ -22,7 +21,6 @@ abstract class TestCase extends BaseTestCase
     use InteractsWithAuthentication;
     use InitializesSettings;
     use LazilyRefreshDatabase;
-    use AssertHasActionLogs;
 
     private array $globallyDisabledMiddleware = [
         SecurityHeaders::class,
@@ -49,5 +47,4 @@ abstract class TestCase extends BaseTestCase
             );
         }
     }
-
 }

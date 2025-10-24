@@ -40,17 +40,17 @@
               <tr>
                 <td><input type="checkbox" name="ids[]" value="{{ $asset->id }}" checked="checked"></td>
                 <td>{{ $asset->id }}</td>
-                <td>{{ $asset->display_name }}</td>
+                <td>{{ $asset->present()->name() }}</td>
                 <td>
                   @if ($asset->location)
-                  {{ $asset->location->display_name }}
+                  {{ $asset->location->present()->name() }}
                   @elseif($asset->rtd_location)
-                  {{ $asset->defaultLoc->display_name }}
+                  {{ $asset->defaultLoc->present()->name() }}
                   @endif
                 </td>
                 <td>
                   @if ($asset->assigned)
-                    {{ $asset->assigned->display_name }}
+                    {{ $asset->assigned->present()->name() }}
                   @endif
                 </td>
               </tr>

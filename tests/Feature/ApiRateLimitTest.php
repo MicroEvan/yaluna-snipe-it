@@ -20,7 +20,6 @@ class ApiRateLimitTest extends TestCase
 
     public function testRateLimitDecreasesRemaining()
     {
-        $this->markTestSkipped('This test is flappy and keeps screwing up the test results.');
         config(['app.api_throttle_per_minute' => 5]);
         $expected_remaining = (config('app.api_throttle_per_minute') - 1);
         $admin = User::factory()->create();
@@ -42,7 +41,6 @@ class ApiRateLimitTest extends TestCase
 
     public function testRateLimitDecreasesRemainingOverSixty()
     {
-        $this->markTestSkipped('This test is flappy and keeps screwing up the test results.');
         config(['app.api_throttle_per_minute' => 80]);
         $expected_remaining = (config('app.api_throttle_per_minute') - 1);
         $admin = User::factory()->create();

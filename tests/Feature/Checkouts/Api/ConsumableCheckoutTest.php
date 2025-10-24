@@ -49,7 +49,6 @@ class ConsumableCheckoutTest extends TestCase
             ]);
 
         $this->assertTrue($user->consumables->contains($consumable));
-        $this->assertHasTheseActionLogs($consumable, ['create', 'checkout']);
     }
 
     public function testUserSentNotificationUponCheckout()

@@ -65,8 +65,6 @@ class AssetCheckoutController extends Controller
      */
     public function store(AssetCheckoutRequest $request, $assetId) : RedirectResponse
     {
-
-
         try {
             // Check if the asset exists
             if (! $asset = Asset::find($assetId)) {
@@ -83,7 +81,6 @@ class AssetCheckoutController extends Controller
             $admin = auth()->user();
 
             $target = $this->determineCheckoutTarget();
-            session()->put(['checkout_to_type' => $target]);
 
             $asset = $this->updateAssetLocation($asset, $target);
 
@@ -126,7 +123,7 @@ class AssetCheckoutController extends Controller
             session()->put(['redirect_option' => $request->get('redirect_option'), 'checkout_to_type' => $request->get('checkout_to_type')]);
 
             if ($asset->checkOut($target, $admin, $checkout_at, $expected_checkin, $request->get('note'), $request->get('name'))) {
-                return Helper::getRedirectOption($request, $asset->id, 'Assets')
+                return redirect()->to(Helper::getRedirectOption($request, $asset->id, 'Assets'))
                     ->with('success', trans('admin/hardware/message.checkout.success'));
             }
             // Redirect to the asset management page with error

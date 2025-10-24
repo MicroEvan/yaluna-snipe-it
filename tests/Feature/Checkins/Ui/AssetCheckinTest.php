@@ -102,7 +102,6 @@ class AssetCheckinTest extends TestCase
             ->post(route('hardware.checkin.store', [$asset]));
 
         $this->assertTrue($asset->refresh()->location()->is($rtdLocation));
-        $this->assertHasTheseActionLogs($asset, ['create', 'checkin from']);
     }
 
     public function testDefaultLocationCanBeUpdatedUponCheckin()

@@ -6,6 +6,12 @@
 @parent
 @stop
 
+@section('header_right')
+  @can('create', \App\Models\Location::class)
+      <a href="{{ route('locations.create') }}" class="btn btn-primary pull-right">
+  {{ trans('general.create') }}</a>
+  @endcan
+@stop
 {{-- Page content --}}
 @section('content')
 <div class="row">
@@ -23,7 +29,6 @@
                   data-bulk-form-id="#locationsBulkForm"
                   data-side-pagination="server"
                   data-sort-order="asc"
-                  data-buttons="locationButtons"
                   id="locationTable"
                   class="table table-striped snipe-table"
                   data-url="{{ route('api.locations.index', array('company_id'=>e(Request::get('company_id')))) }}"

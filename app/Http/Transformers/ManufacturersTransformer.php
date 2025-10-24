@@ -40,7 +40,7 @@ class ManufacturersTransformer
                 'notes' => Helper::parseEscapedMarkedownInline($manufacturer->notes),
                 'created_by' => ($manufacturer->adminuser) ? [
                     'id' => (int) $manufacturer->adminuser->id,
-                    'name'=> e($manufacturer->adminuser->display_name),
+                    'name'=> e($manufacturer->adminuser->present()->fullName()),
                 ] : null,
                 'created_at' => Helper::getFormattedDateObject($manufacturer->created_at, 'datetime'),
                 'updated_at' => Helper::getFormattedDateObject($manufacturer->updated_at, 'datetime'),
