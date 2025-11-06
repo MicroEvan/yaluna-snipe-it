@@ -157,7 +157,7 @@ return [
     'import'         	    => 'Import',
     'import_this_file'      => 'Felder zuordnen und diese Datei bearbeiten',
     'importing'         	=> 'Importiere',
-    'importing_help'        => 'Du kannst Assets, Zubehör, Lizenzen, Komponenten, Verbrauchsmaterialien und Benutzer mittels CSV-Datei importieren. <br><br>Die CSV-Datei sollte kommagetrennt sein und eine Kopfzeile enthalten, die mit den <a href="https://snipe-it.readme.io/docs/importing" target="_new">Beispiel-CSVs aus der Dokumentation</a> übereinstimmen.',
+    'importing_help'        => 'Du kannst Assets, Zubehör, Lizenzen, Komponenten, Verbrauchsmaterialien und Benutzer mittels CSV-Datei importieren. <br><br>Die CSV-Datei sollte kommagetrennt sein und eine Kopfzeile enthalten, die mit den <a href="https://yaluna-snipe-it.readme.io/docs/importing" target="_new">Beispiel-CSVs aus der Dokumentation</a> übereinstimmen.',
     'import-history'        => 'Import Verlauf',
     'asset_maintenance'        => 'Wartungen',
     'asset_maintenance_report' => 'Wartungsbericht',
@@ -281,7 +281,7 @@ return [
     'signed_off_by'         => 'Unterschrieben von',
     'skin'       			=> 'Skin',
     'webhook_msg_note'        => 'Eine Benachrichtigung wird über den Webhook gesendet',
-    'webhook_test_msg'        => 'Oh hi! Sieht so aus, als ob Deine :app Integration mit Snipe-IT funktioniert!',
+    'webhook_test_msg'        => 'Oh hi! Sieht so aus, als ob Deine :app Integration mit yaluna-snipe-it funktioniert!',
     'some_features_disabled' => 'Einige Funktionen sind für den DEMO-Modus deaktiviert.',
     'site_name'				=> 'Seitenname',
     'state'  				=> 'Bundesland',
@@ -591,7 +591,7 @@ return [
     'by' => 'Von',
     'version' => 'Version',
     'build' => 'Build',
-    'footer_credit' => '<a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> ist Open-Source-Software, entwickelt mit <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">Liebe</span> von <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a>.',
+    'footer_credit' => '<a target="_blank" href="https://devs.yalunaictsolutions.com" rel="noopener">YICTS Assest Mgr tool</a> isti Open-Source-Software, entwickelt mit <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">Liebe</span> von <a href="https://bsky.app/profile/initdevs.com" rel="noopener">@initdevs.com</a>.',
 
 // Add form placeholders here
     'placeholders' => [

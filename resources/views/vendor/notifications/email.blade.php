@@ -98,7 +98,7 @@ $style = [
                                     {{ $snipeSettings->site_name }}
                                 @endif
                             @else
-                                Snipe-IT
+                                Yaluna-Snipe-IT
                             @endif
                         </td>
                     </tr>
