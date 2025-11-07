@@ -591,7 +591,7 @@ return [
     'by' => 'De către',
     'version' => 'Versiune',
     'build' => 'build',
-    'footer_credit' => '<a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> este software open source, realizat cu <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">dragoste</span> de <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a>.',
+    'footer_credit' => '<a target="_blank" href="https://devs.yalunaictsolutions.com/yalu-assets" rel="noopener">Snipe-IT</a> este software open source, realizat cu <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">dragoste</span> de <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a>.',
 
 // Add form placeholders here
     'placeholders' => [

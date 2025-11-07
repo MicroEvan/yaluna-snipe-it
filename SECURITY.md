@@ -27,4 +27,4 @@ response within two business days, and we typically have fixes out in under a we
 This obviously varies based on the severity of the  security issue and the difficulty in remediation, 
 but those have historically been the timelines we worm around.
 
-For a full breakdown of our security policies, please see https://snipeitapp.com/security.
+For a full breakdown of our security policies, please see https://devs.yalunaictsolutions.com/yalu-assets/security.

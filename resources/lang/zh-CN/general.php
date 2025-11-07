@@ -591,7 +591,7 @@ return [
     'by' => '经由',
     'version' => '版本',
     'build' => '版本号',
-    'footer_credit' => '<a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> 是开源软件，用 <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">爱</span> 由 <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a> 制作。',
+    'footer_credit' => '<a target="_blank" href="https://devs.yalunaictsolutions.com/yalu-assets" rel="noopener">Snipe-IT</a> 是开源软件，用 <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">爱</span> 由 <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a> 制作。',
 
 // Add form placeholders here
     'placeholders' => [

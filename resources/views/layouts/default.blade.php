@@ -935,9 +935,9 @@ dir="{{ Helper::determineLanguageDirection() }}">
                     @if ($snipeSettings->support_footer!='off')
                         @if (($snipeSettings->support_footer=='on') || (($snipeSettings->support_footer=='admin') && (Auth::user()->isSuperUser()=='1')))
                             <a target="_blank" class="btn btn-default btn-xs"
-                               href="https://snipe-it.readme.io/docs/overview"
+                               href="https://devs.yalunaictsolutions.com/yalu-assets/docs/overview"
                                rel="noopener">{{ trans('general.user_manual') }}</a>
-                            <a target="_blank" class="btn btn-default btn-xs" href="https://snipeitapp.com/support/"
+                            <a target="_blank" class="btn btn-default btn-xs" href="https://devs.yalunaictsolutions.com/yalu-assets/support/"
                                rel="noopener">{{ trans('general.bug_report') }}</a>
                         @endif
                     @endif

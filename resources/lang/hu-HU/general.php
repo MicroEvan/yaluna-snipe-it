@@ -591,7 +591,7 @@ return [
     'by' => 'Által',
     'version' => 'Verzió',
     'build' => 'build',
-    'footer_credit' => 'A <a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> nyílt forráskódú szoftver, amelyet <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">szeretettel</span> készített a <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a> csapata.',
+    'footer_credit' => 'A <a target="_blank" href="https://devs.yalunaictsolutions.com/yalu-assets" rel="noopener">Snipe-IT</a> nyílt forráskódú szoftver, amelyet <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">szeretettel</span> készített a <a href="https://bsky.app/profile/snipeitapp.com" rel="noopener">@snipeitapp.com</a> csapata.',
 
 // Add form placeholders here
     'placeholders' => [
