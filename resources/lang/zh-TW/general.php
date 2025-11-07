@@ -591,7 +591,7 @@ return [
     'by' => '經由',
     'version' => 'Version',
     'build' => 'build',
-        'footer_credit' => '<a target="_blank" href="https://devs.yalunaictsolutions.com/" rel="noopener">Yaluna Snipe-IT</a> Asset Management to, made with <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">love</span> by <a href="https://devs.yalunaictsolutions.com/" rel="noopener">@yalunaictsolutions.com</a>.',
+        'footer_credit' => '<a target="_blank" href="https://devs.yalunaictsolutions.com/" rel="noopener">Yaluna Snipe-IT</a> Asset Management tool, made with <i class="fa fa-heart" aria-hidden="true" style="color: #a94442; font-size: 10px" /></i><span class="sr-only">love</span> by <a href="https://devs.yalunaictsolutions.com/" rel="noopener">@yalunaictsolutions.com</a>.',
 
 // Add form placeholders here
     'placeholders' => [
