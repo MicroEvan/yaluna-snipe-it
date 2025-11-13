@@ -157,7 +157,7 @@ return [
     'import'         	    => 'Importeer',
     'import_this_file'      => 'Kaart velden en verwerk dit bestand',
     'importing'         	=> 'Importeren',
-    'importing_help'        => 'U kunt assets, accessoires, licenties, componenten, verbruiksartikelen en gebruikers importeren via het CSV-bestand. <br><br>De CSV moet door komma\'s worden gescheiden en met koppen die overeenkomen met de koppen in de <a href="https://snipe-it.readme.io/docs/importing" target="_new">voorbeeld CSV\'s in de documentatie</a>.',
+    'importing_help'        => 'U kunt assets, accessoires, licenties, componenten, verbruiksartikelen en gebruikers importeren via het CSV-bestand. <br><br>De CSV moet door komma\'s worden gescheiden en met koppen die overeenkomen met de koppen in de <a href="https://yaluna-asset-management.yalunaictsolutions.com/docs/getting-started#/" target="_new">voorbeeld CSV\'s in de documentatie</a>.',
     'import-history'        => 'Import historie',
     'asset_maintenance'        => 'Asset onderhoud',
     'asset_maintenance_report' => 'Asset onderhoud rapport',

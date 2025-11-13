@@ -169,7 +169,7 @@ return [
     'import'         	    => 'واردات',
     'import_this_file'      => 'انتخاب نظیر به نظیر فیلدها و پردازش فایل',
     'importing'         	=> 'در حال وارد کردن',
-    'importing_help'        => 'می‌توانید دارایی‌ها، لوازم جانبی، مجوزها، اجزا، مواد مصرفی و کاربران را از طریق فایل CSV وارد کنید. <br><br>CSV باید با کاما محدود شود و با سرصفحه‌هایی که در <a href="https://snipe-it.readme.io/docs/importing" target="_new"> مطابقت دارند قالب‌بندی شود. نمونه CSV در مستندات</a>.
+    'importing_help'        => 'می‌توانید دارایی‌ها، لوازم جانبی، مجوزها، اجزا، مواد مصرفی و کاربران را از طریق فایل CSV وارد کنید. <br><br>CSV باید با کاما محدود شود و با سرصفحه‌هایی که در <a href="https://yaluna-asset-management.yalunaictsolutions.com/docs/getting-started#/" target="_new"> مطابقت دارند قالب‌بندی شود. نمونه CSV در مستندات</a>.
 ',
     'import-history'        => 'واردات تاریخ',
     'asset_maintenance'        => 'نگهداشت دارایی',
