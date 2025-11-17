@@ -3,7 +3,7 @@
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/snipe-it/localized.svg)](https://crowdin.com/project/snipe-it) [![Docker Pulls](https://img.shields.io/docker/pulls/snipe/snipe-it.svg)](https://hub.docker.com/r/snipe/snipe-it/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/804dd1beb14a41f38810ab77d64fc4fc)](https://app.codacy.com/gh/grokability/snipe-it/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Tests](https://github.com/grokability/snipe-it/actions/workflows/tests.yml/badge.svg)](https://github.com/grokability/snipe-it/actions/workflows/tests.yml)
 [![All Contributors](https://img.shields.io/badge/all_contributors-331-orange.svg?style=flat-square)](#contributing) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/yZFtShAcKk)
 
-## Snipe-IT - Open Source Asset Management System
+## Yaluna Snipe-IT - Open Source Asset Management System
 
 This is a FOSS project for asset management in IT Operations. Knowing who has which laptop, when it was purchased in order to depreciate it correctly, handling software licenses, etc.
 
