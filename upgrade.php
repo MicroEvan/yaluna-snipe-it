@@ -72,7 +72,7 @@ if ($argc > 1){
 }
 
 echo "\e[95m--------------------------------------------------------\n";
-echo "WELCOME TO THE YALUNA SNIPE-IT UPGRADER! \n";
+echo "WELCOME TO THE YALUNA ASSET MANAGER UPGRADER! \n";
 echo "--------------------------------------------------------\n\n";
 echo "This script will attempt to: \n\n";
 echo "- validate some very basic .env file settings \n";
